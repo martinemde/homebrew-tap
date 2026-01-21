@@ -5,41 +5,53 @@
 class Skillet < Formula
   desc "Run Agent SKILL.md files as shell commands with Claude Code"
   homepage "https://github.com/martinemde/skillet"
-  version "0.3.1"
+  version "0.3.2"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/martinemde/skillet/releases/download/v0.3.1/skillet_Darwin_x86_64.tar.gz"
-      sha256 "19d633928a6e1b63ae586f545dbff4407a6968f8afcca69f666f81abad97bb3e"
+      url "https://github.com/martinemde/skillet/releases/download/v0.3.2/skillet_Darwin_x86_64.tar.gz"
+      sha256 "d90e2730798185e6925b415eb214949182f11467c528ba2a964deaa06e763536"
 
       def install
         bin.install "skillet"
+        bash_completion.install "completions/skillet.bash" => "skillet"
+        zsh_completion.install "completions/_skillet"
+        fish_completion.install "completions/skillet.fish"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/martinemde/skillet/releases/download/v0.3.1/skillet_Darwin_arm64.tar.gz"
-      sha256 "6aced36c5bdf78256a4663589a231b2e4c10f57d36c9d7969a4518db97e3de9c"
+      url "https://github.com/martinemde/skillet/releases/download/v0.3.2/skillet_Darwin_arm64.tar.gz"
+      sha256 "68539efdc8923c40ac40825719d9c0ebf458579cf77c94a1b07a9e241bcb36c6"
 
       def install
         bin.install "skillet"
+        bash_completion.install "completions/skillet.bash" => "skillet"
+        zsh_completion.install "completions/_skillet"
+        fish_completion.install "completions/skillet.fish"
       end
     end
   end
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/martinemde/skillet/releases/download/v0.3.1/skillet_Linux_x86_64.tar.gz"
-      sha256 "5594fe9001048fb997df1ec0522b7216edfea0deed02464a2de9b78169395bdd"
+      url "https://github.com/martinemde/skillet/releases/download/v0.3.2/skillet_Linux_x86_64.tar.gz"
+      sha256 "4d68c1104e3a5b17df02268fa2d7a19a9570a4b676d9b2418e2b0aebfb63c28f"
       def install
         bin.install "skillet"
+        bash_completion.install "completions/skillet.bash" => "skillet"
+        zsh_completion.install "completions/_skillet"
+        fish_completion.install "completions/skillet.fish"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/martinemde/skillet/releases/download/v0.3.1/skillet_Linux_arm64.tar.gz"
-      sha256 "ec006b5b61044822ca5c6940cb2523bbdce1e25389a93f669ba1b0b22b90ca9e"
+      url "https://github.com/martinemde/skillet/releases/download/v0.3.2/skillet_Linux_arm64.tar.gz"
+      sha256 "b689af38c55aa872fd51842d78716d6eb35de4f08992e018afeab3ed73f30353"
       def install
         bin.install "skillet"
+        bash_completion.install "completions/skillet.bash" => "skillet"
+        zsh_completion.install "completions/_skillet"
+        fish_completion.install "completions/skillet.fish"
       end
     end
   end
