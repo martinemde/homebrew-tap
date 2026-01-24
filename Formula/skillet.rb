@@ -5,13 +5,13 @@
 class Skillet < Formula
   desc "Run Agent SKILL.md files as shell commands with Claude Code"
   homepage "https://github.com/martinemde/skillet"
-  version "0.3.3"
+  version "0.4.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/martinemde/skillet/releases/download/v0.3.3/skillet_Darwin_x86_64.tar.gz"
-      sha256 "0b89ddc77eb4bfbfff1126f7bbca3c141b8d7451cbd65b850a4e120ac9d0e4dd"
+      url "https://github.com/martinemde/skillet/releases/download/v0.4.0/skillet_Darwin_x86_64.tar.gz"
+      sha256 "e5baf82925bccdde172b646d5cb89988cf00407d660e7ee7956c7db8642046e8"
 
       def install
         bin.install "skillet"
@@ -21,8 +21,8 @@ class Skillet < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/martinemde/skillet/releases/download/v0.3.3/skillet_Darwin_arm64.tar.gz"
-      sha256 "e7db6308dc2733488119fcabe5a969b59fc4ca7fd344d0d494f3398dd4dedb82"
+      url "https://github.com/martinemde/skillet/releases/download/v0.4.0/skillet_Darwin_arm64.tar.gz"
+      sha256 "ba555e680ca8118d0bbdd91e8a437ae01938991caec16ef5dd769e836689c61e"
 
       def install
         bin.install "skillet"
@@ -35,8 +35,8 @@ class Skillet < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/martinemde/skillet/releases/download/v0.3.3/skillet_Linux_x86_64.tar.gz"
-      sha256 "d62d6d21d3d57c24c4343dcc0bd60bd564ed6c739605fa47153b7eb556568e12"
+      url "https://github.com/martinemde/skillet/releases/download/v0.4.0/skillet_Linux_x86_64.tar.gz"
+      sha256 "27b088771674907f49d365ae38dff0aa2bc0320fdce66d153b36d4e7d4411235"
       def install
         bin.install "skillet"
         bash_completion.install "completions/skillet.bash" => "skillet"
@@ -45,8 +45,8 @@ class Skillet < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/martinemde/skillet/releases/download/v0.3.3/skillet_Linux_arm64.tar.gz"
-      sha256 "10aeb682f1047f5205645080450ca2dc4eccec3cca74b3df686c180c3f9aaced"
+      url "https://github.com/martinemde/skillet/releases/download/v0.4.0/skillet_Linux_arm64.tar.gz"
+      sha256 "21b59caad5865973a5a6d9bd2278bdd34ecb297110a97497475cf5b43c755e9f"
       def install
         bin.install "skillet"
         bash_completion.install "completions/skillet.bash" => "skillet"
